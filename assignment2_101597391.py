@@ -59,7 +59,7 @@ class NetworkTool:
 # ---------------------------------------------------------------------------------------------------
 # PortScanner reuses the target property and its validation logic from the NetworkTool class.
 # This allows PortScanner to utilize the target property and its validation logic without needing to reimplement it, thus
-# improving code reuse and maintainability by harnessing object-oriented programming principles such as inheritance.
+# improving code reusability and maintainability by harnessing object-oriented programming principles such as inheritance.
 class PortScanner(NetworkTool):
 
     def __init__(self, target):
@@ -78,7 +78,7 @@ class PortScanner(NetworkTool):
 # from your scan_port method and tried to scan a port on a machine that is not reachable?
 # ---------------------------------------------------------------------------------------------------
 # Without try-except, any network error would cause the entire program to crash.
-# This would prematurely terminate the scanning process and prevent remaining ports from being checked.
+# This would prematurely terminate the scanning process and prevent any remaining ports from being checked.
 # Exception handling ensures that the scanner continues to run even if individual 
 # port scans fail, providing a more robust and user-friendly experience overall.
         try:
@@ -105,10 +105,10 @@ class PortScanner(NetworkTool):
 # Q2 - Threading: Why do we use threading to scan ports instead of scanning them one at a time?
 # What would happen if you scanned 1024 ports without threads?
 # ---------------------------------------------------------------------------------------------------
-# Threading allows for multiple ports to be scanned simultaneously rather than sequentially, 
+# Threading allows for multiple ports to be scanned simultaneously rather than sequentially 
 # which significantly reduces the total scan time, especially when scanning a large range of ports.
 # Without threading, scanning each port one at a time would be inefficient and time-consuming.
-# Using threads improves performance by running multiple scans in parallel, making the port scanning process much faster overall.
+# Using threads improves performance by running multiple scans in parallel, making the port scanning process much faster.
     def scan_range(self, start_port, end_port):
         threads = []
 
